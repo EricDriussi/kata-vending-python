@@ -8,5 +8,7 @@ class VendingMachine:
             self.display.output("$0.10")
         elif money_amount == 0.25:
             self.display.output("$0.25")
-        else:
+        elif money_amount == 0.05:
             self.display.output("$0.05")
+
+
