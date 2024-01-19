@@ -32,6 +32,15 @@ class TestVendingMachine:
 
         assert_that(display.output_was_called_with("$0.10")).is_true()
 
+    def test_machine_displays_money_amount_of_one_quarter_when_one_quarter_is_inserted(self):
+        display = DisplaySpy()
+        money_amount = 0.25
+        vending_machine = VendingMachine(display)
+
+        vending_machine.insert_coin(money_amount)
+
+        assert_that(display.output_was_called_with("$0.25")).is_true()
+
 
 class DisplaySpy:
 
