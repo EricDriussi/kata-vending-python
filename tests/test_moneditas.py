@@ -41,6 +41,15 @@ class TestVendingMachine:
 
         assert_that(display.output_was_called_with("$0.25")).is_true()
 
+    def test_machine_does_not_update_display_when_one_invalid_coin_is_inserted(self):
+        display = DisplaySpy()
+        invalid_money_amount = 0.01
+        vending_machine = VendingMachine(display)
+
+        vending_machine.insert_coin(invalid_money_amount)
+
+        assert_that(display.output_was_called_with("INSERT_COIN")).is_true()
+
 
 class DisplaySpy:
 
