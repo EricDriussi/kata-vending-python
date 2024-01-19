@@ -1,6 +1,4 @@
-class VendingMachine():
-    def __init__(self):
+class VendingMachine:
+    def __init__(self, display):
         pass
 
-    def add(self, a, b):
-        return a + b
