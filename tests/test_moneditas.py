@@ -50,6 +50,15 @@ class TestVendingMachine:
 
         assert_that(display.output_was_called_with("INSERT_COIN")).is_true()
 
+    def test_machine_displays_current_money_amount_incremented_by_one_nickel_money_amount(self):
+        display = DisplaySpy()
+        money_amount = 0.05
+        vending_machine = VendingMachine(display)
+        vending_machine.insert_coin(money_amount)
+        vending_machine.insert_coin(money_amount)
+
+        assert_that(display.output_was_called_with("$0.10")).is_true()
+
 
 class DisplaySpy:
 
