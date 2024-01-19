@@ -1,4 +1,4 @@
 class VendingMachine:
     def __init__(self, display):
-        pass
+        display.output("INSERT_COIN")
 
