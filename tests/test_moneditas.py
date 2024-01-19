@@ -16,12 +16,21 @@ class TestVendingMachine:
 
     def test_machine_displays_money_amount_of_one_nickel_when_one_nickel_is_inserted(self):
         display = DisplaySpy()
-        nickel_money_amount = 0.05
+        money_amount = 0.05
         vending_machine = VendingMachine(display)
 
-        vending_machine.insert_coin(nickel_money_amount)
+        vending_machine.insert_coin(money_amount)
 
         assert_that(display.output_was_called_with("$0.05")).is_true()
+
+    def test_machine_displays_money_amount_of_one_dime_when_one_dime_is_inserted(self):
+        display = DisplaySpy()
+        money_amount = 0.10
+        vending_machine = VendingMachine(display)
+
+        vending_machine.insert_coin(money_amount)
+
+        assert_that(display.output_was_called_with("$0.10")).is_true()
 
 
 class DisplaySpy:
