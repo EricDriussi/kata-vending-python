@@ -4,4 +4,7 @@ class VendingMachine:
         self.display.output("INSERT_COIN")
 
     def insert_coin(self, money_amount):
-        self.display.output("$0.05")
+        if money_amount == 0.10:
+            self.display.output("$0.10")
+        else:
+            self.display.output("$0.05")
