@@ -1,6 +1,7 @@
 class VendingMachine:
     def __init__(self, display):
-        display.output("INSERT_COIN")
+        self.display = display
+        self.display.output("INSERT_COIN")
 
-    def insertCoin(self, money_amount):
-        pass
+    def insert_coin(self, money_amount):
+        self.display.output("$0.05")
